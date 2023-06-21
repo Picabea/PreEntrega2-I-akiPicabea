@@ -2,18 +2,27 @@ body{
     margin: 0;
     padding: 0;
 }
-
+#div--header--celular{
+    display: none;
+}
 header{
     width: 100%;
     background-color: rgb(255, 212, 196);
     margin: 0;
     position: sticky;
+    display: flex;
     top: 0;
     z-index: 1;
     border-bottom: 3px orange solid;
     border-top: 3px orange solid;
 }
 
+header nav{
+    display: flex;
+    align-items: end;
+    justify-content: end;
+    width: 100%;
+}
 .espacio_blanco{
     grid-area: blanco;
 }
@@ -22,6 +31,7 @@ header{
     grid-area: nav;
     display: flex;
     align-items: center;
+    width: 100%;
 }
 header nav ul div li{
     margin-left: 5px;
@@ -36,10 +46,14 @@ header nav ul div li{
 
 header nav ul{
     display:grid;
-    grid-template-columns: 1fr 3fr 1fr;
+    grid-template-columns: 40% 40% 20%;
     grid-template-rows: 100%;
     grid-template-areas: "nav blanco acercaDe";
-    
+    width: 100%;
+    align-self: center;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    margin: 0px;
 }
 
 header ul li{
@@ -49,7 +63,7 @@ header ul li{
 }
 
 header ul li a button{
-    margin: 0;
+    margin: 0px;
     padding: 5px;
     color: white;
     background-color: rgb(255, 145, 0);
@@ -64,6 +78,7 @@ header ul li a button{
 main{
     width: 100%;
     margin: 0;
+    margin-bottom: 10%;
 }
 
 #main_index{
@@ -71,12 +86,11 @@ main{
     background-size: cover;
 }
 
-
-
 .padding_div{
     padding-top: 300px;
     padding-bottom: 300px;
 }
+
 main h1{
     font-family: 'Poppins', sans-serif;
     text-align: center;
@@ -99,33 +113,37 @@ section{
 #section_index{
     background-color: rgb(101, 189, 167);
     border-top: 3px rgb(29, 117, 95) solid;
+    padding-top: 10%;
 }
-
-
-section div{
-    display: block;
+#section_index div:nth-child(1){
+    margin-bottom: 5%;
 }
-
 section b{
     width: 300;
-}
-
-
-section img{
-    width:100%;
-    height:100%;
 }
 
 footer{
     background-color: lightblue;
     border-top: 3px rgb(66, 110, 207) solid;
+    display: flex;
+    justify-content: space-between;
 }
-
+footer div:nth-child(2) img:nth-child(2){
+    display: none;
+}
 footer img{
     height: 50px;
     width: 50x;
 }
 
+footer div{
+    display: flex;
+    align-items: center;
+    width: 100%;
+}
+footer div:nth-child(2){
+    justify-content: end;
+}
 #main_perros{
     background-image: url('../images/husky_corre.jpg');
     background-size: cover;
@@ -157,18 +175,18 @@ footer img{
     width: 33%;
     text-align: center;
 }
+.img-adopcion-grid{
+    grid-area: img;
+    align-self: start;
+    height: 100%;
+    width: 100%;
+}
 
-.div_adopcion{
-    margin: 50px 0px 50px 0px;
-    background-color: orange;
-
-    display: grid;
-    grid-template-columns: 20% 30% 30% 20%;
-    grid-template-rows: 100%;
-    grid-template-areas: 
-    "img texto contacto mapa ";
-    justify-items: center;
-    align-items: center;
+.mapa-adopcion-grid{
+    grid-area: mapa;
+    align-self: self-end;
+    height: 100%;
+    width: 100%;
 }
 
 .texto_adopcion{
@@ -178,6 +196,25 @@ footer img{
 .texto_contacto{
     text-align: right;
     grid-area: contacto;
+}
+
+#section_adopcion{
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+}
+.div_adopcion{
+    background-color: orange;
+    border-bottom: 3px rgb(255, 111, 0) solid;
+    border-top: 3px rgb(255, 111, 0) solid;
+    
+    display: grid;
+    grid-template-columns: 20% 30% 30% 20%;
+    grid-template-rows: 100%;
+    grid-template-areas: 
+    "img texto contacto mapa ";
+    justify-items: center;
+    align-items: center;
 }
 
 #main_adopcion section iframe{
@@ -193,29 +230,156 @@ footer img{
 
 
 #main_au div img{
-    width:fit-content;
-    height: fit-content;
+    width:20%
 }
-#main_au div div{
-    display: block;
+#main_au:nth-child(2){
+    display: inline-block;
 }
 
 #main_au div{
     display: flex;
 }
 
+#main_au:nth-child(2){
+    justify-content: space-between;
+}
+#main_au iframe{
+    width: 100%;
+    height: 100%;
+}
+#div--iframe{
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+#nombre--mobile{
+    display: none;
+}
 #div_contacto{
-    position: relative;
-    left: 500px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
 }
 
-.img_adopcion_grid{
-    grid-area: img;
-    align-self: start;
+
+.titulo-header{
+    display: none;
+}
+#div-mascotas h2{
+    grid-area: titulo;
+    align-self: center;
+    justify-self: center;
+}
+#div-mascotas div:nth-child(2){
+    grid-area: gato;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+} 
+
+#div-mascotas p:nth-child(3){
+    grid-area: parrafo-gato;
+}
+#div-mascotas p:nth-child(4){
+    grid-area: parrafo-perro;
+}
+.parrafo--mascotas{
+    font-family: 'Poppins', sans-serif;
+    font-weight: 300;
+    text-align: center;
+}
+.imagenes--mascotas{
+    width: 70%;
 }
 
-.mapa-adopcion-grid{
-    grid-area: mapa;
-    align-self: self-end;
+#div-mascotas div:nth-child(5){
+    grid-area: perro;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
 }
 
+#div-mascotas{
+    display: grid;
+    grid-template-columns: 25% 25% 25% 25%;
+    grid-template-rows: 20% 80%;
+    grid-template-areas: 
+    "titulo titulo titulo titulo"
+    "gato parrafo-gato parrafo-perro perro";
+}
+
+#div-mascotas b{
+    font-family: 'Poppins', 'sans-serif';
+    font-weight: 700;
+    font-size: 150%;
+    text-align:center;
+}
+
+#parrafo-adaptacion{
+    display: none;
+}
+#main_au div:nth-child(1) div {
+    flex-direction: column;
+    justify-content: start;
+}
+#div--segundoAU{
+    justify-content: space-between;
+    height: 400px;
+}
+@media (max-width: 992px) {
+    footer div:nth-child(2) img:nth-child(2){
+        display: inline;
+    }
+    footer div:nth-child(2) i{
+        display: none;
+    }
+    #div-mascotas div:nth-child(5){
+        justify-content: end;
+    }
+    #div--header--celular{
+        display: inline;
+    }
+    header{
+        display: flex
+    }
+    .titulo-header{
+        display: inline;
+    }
+    #section_index div h2{
+        text-align: center;
+    }
+    #parrafo-adaptacion{
+        display: block;
+        grid-area: parrafo-perro-adaptacion;
+        text-align: center;
+    }
+    #parrafo-perro{
+        display: none;
+    }
+    #div-mascotas{
+        grid-template-columns: 100%;
+        grid-template-rows: 0.3fr 1fr 0.1fr 1fr 0.1fr;
+        grid-template-areas: 
+        "titulo"
+        "gato"
+        "parrafo-gato"
+        "perro"
+        "parrafo-perro-adaptacion";
+    }
+
+    #main_au div:nth-child(1){
+        flex-direction: column;
+        align-items: center;
+    }
+    #main_au div:nth-child(1) div{
+        align-items: center;
+    }
+    #div--segundoAU{
+        flex-direction: column;
+        align-items: center;
+    }
+}
